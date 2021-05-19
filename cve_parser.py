@@ -51,9 +51,6 @@ def count_cwe_occurances(cves):
     return found_classes
 
 
-cnt = 0
-
-
 # This function parses a CVE data file into an array of CVE dictionaries
 # Within every dictionary is the usefull data for one specific CVE that has a
 # relation with the linux kernel
@@ -103,11 +100,6 @@ def cve_parser(year, path):
             discarded_noinfo += 1
             continue
 
-        if "double fetch" in cve_descr:
-            global cnt
-            cnt += 1
-            print(cve_id, cve_descr, cwe_list)
-
         # Classify the CVE
         classification = classify_on_cwe(cve_id, cwe_list)
 
@@ -129,6 +121,4 @@ def cve_parser(year, path):
                                                                                                 len(cves),
                                                                                                 disputed_ctr,
                                                                                                 discarded_noinfo))
-
-    print(cnt)
     return cves
