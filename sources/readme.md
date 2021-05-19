@@ -1,0 +1,2 @@
+This folder will contain the JSON data feeds that contain all the CVEs that will be evaluated and classified within the application.
+The JSON data feeds files can be downloaded from: https://nvd.nist.gov/vuln/data-feeds
